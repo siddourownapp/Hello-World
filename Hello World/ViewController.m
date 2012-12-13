@@ -9,7 +9,24 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize mainlabel;
 
+- (IBAction)DisplayMessage:(id)sender
+{
+    float newx = 500.0f;
+    float newy = 100.0f;
+//    if ([mainlabel.text length] == 0) {
+    mainlabel.text = @"Hello Subham";
+    newx = (float) (arc4random() % (int) self.view.bounds.size.width);    
+    newy = (float) (arc4random() % (int) self.view.bounds.size.height);     mainlabel.center = CGPointMake(newx, newy);    //}
+//    else
+//    {
+
+//        mainlabel.text = @"";
+//    }
+        
+}
+	
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -26,6 +43,7 @@
 
 - (void)viewDidUnload
 {
+    [self setMainlabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
